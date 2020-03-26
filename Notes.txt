@@ -1,0 +1,13 @@
+Test that reading the sample data tells us there are 15 wins
+
+Given/When/Then  (AAA)
+
+Given a stream that connects to the sample data we've downloaded
+When I call DataParser.parse(stream) to get a GameResult object
+Then gameResult.wins == 15
+
+S
+M
+A  Assignable
+R
+T
