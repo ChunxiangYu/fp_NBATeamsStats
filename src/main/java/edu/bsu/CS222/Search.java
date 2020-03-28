@@ -8,17 +8,18 @@ import java.io.InputStream;
 import java.util.List;
 
 public class Search {
-
+/*
     private JSONArray jsonArray = new JSONArray();
+
     public void parseRequest(InputStream in) {
         List<String> stats = Team.createObject().getStatsFromGame();
         Object json = Configuration.defaultConfiguration().jsonProvider().parse(in, "UTF-8");
-        for(String s: stats)
-        {
+        for (String s : stats) {
             jsonArray.add(JsonPath.read(json, makeExpression(s)));
         }
         System.out.println(jsonArray.toString());
     }
+}
 
     public
 
@@ -26,4 +27,6 @@ public class Search {
     {
         return "$.." + s;
     }
+}
+*/
 }
