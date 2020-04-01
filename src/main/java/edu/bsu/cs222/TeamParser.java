@@ -1,4 +1,4 @@
-package edu.bsu.CS222;
+package edu.bsu.cs222;
 
 import com.jayway.jsonpath.Configuration;
 import com.jayway.jsonpath.JsonPath;

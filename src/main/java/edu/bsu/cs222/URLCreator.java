@@ -1,10 +1,10 @@
-package edu.bsu.CS222;
+package edu.bsu.cs222;
 
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-public class HttpRequest {
+public class URLCreator {
     public static InputStream getTeamStats(String date) throws Exception {
             URL url = new URL("http://data.nba.net/data/10s/prod/v1/"+date+"/standings_all.json");
             HttpURLConnection con = (HttpURLConnection) url.openConnection();

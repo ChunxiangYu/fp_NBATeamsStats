@@ -1,4 +1,4 @@
-package edu.bsu.CS222;
+package edu.bsu.cs222;
 
 import com.jayway.jsonpath.Configuration;
 import com.jayway.jsonpath.JsonPath;
@@ -12,7 +12,7 @@ public class TeamList {
     private InputStream in;
 
     private TeamList() throws Exception {
-        in = HttpRequest.getTeamList();
+        in = URLCreator.getTeamList();
     }
 
     public static TeamList getNewListOfTeams() throws Exception {

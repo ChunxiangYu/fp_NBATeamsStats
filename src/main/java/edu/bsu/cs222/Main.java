@@ -1,9 +1,7 @@
-package edu.bsu.CS222;
+package edu.bsu.cs222;
 
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import javafx.application.Application;
 import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.scene.control.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -48,7 +46,7 @@ public class Main extends Application {
             try {
                 int year = Integer.parseInt(yearTextField.getText());
                 String date = changeToDate(year);
-                TeamStat teamStat = TeamParser.parseRequest(HttpRequest.getTeamStats(date)).addId(getTeamId(t1)).parse();
+                TeamStat teamStat = TeamParser.parseRequest(URLCreator.getTeamStats(date)).addId(getTeamId(t1)).parse();
                 compareResultLabel.setText(String.valueOf(teamStat));
             } catch (Exception e) {
                 e.printStackTrace();
@@ -62,7 +60,7 @@ public class Main extends Application {
             try {
                 int year = Integer.parseInt(yearTextField.getText());
                 String date = changeToDate(year);
-                TeamStat teamStat = TeamParser.parseRequest(HttpRequest.getTeamStats(date)).addId(getTeamId(t1)).parse();
+                TeamStat teamStat = TeamParser.parseRequest(URLCreator.getTeamStats(date)).addId(getTeamId(t1)).parse();
                 statsLabel.setText(String.valueOf(teamStat));
             } catch (Exception e) {
                 e.printStackTrace();

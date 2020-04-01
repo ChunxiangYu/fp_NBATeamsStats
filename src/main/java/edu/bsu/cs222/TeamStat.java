@@ -1,4 +1,4 @@
-package edu.bsu.CS222;
+package edu.bsu.cs222;
 
 public class TeamStat {
     public static TeamBuilder build() {
