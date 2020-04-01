@@ -42,8 +42,11 @@ public class TeamParser {
         jsonArray.add(JsonPath.read(json, "$.league.standard.teams[?(@.teamId == '" + id + "')].teamId"));
         jsonArray.add(JsonPath.read(json, "$.league.standard.teams[?(@.teamId == '" + id + "')].win"));
         jsonArray.add(JsonPath.read(json, "$.league.standard.teams[?(@.teamId == '" + id + "')].loss"));
+        jsonArray.add(JsonPath.read(json, "$.league.standard.teams[?(@.teamId == '" + id + "')].confRank"));
+        jsonArray.add(JsonPath.read(json, "$.league.standard.teams[?(@.teamId == '" + id + "')].divRank"));
+        jsonArray.add(JsonPath.read(json, "$.league.standard.teams[?(@.teamId == '" + id + "')].streak"));
 
-        return TeamStat.build().teamId(((JSONArray) jsonArray.get(0)).get(0).toString()).teamWins(getFloat(Team.w)).teamLoss(getFloat(Team.l));
+        return TeamStat.build().teamId(((JSONArray) jsonArray.get(0)).get(0).toString()).teamWins(getFloat(1)).teamLoss(getFloat(2));
     }
     private float getFloat(Integer index){
         return Float.parseFloat(((JSONArray) jsonArray.get(index)).get(0).toString());

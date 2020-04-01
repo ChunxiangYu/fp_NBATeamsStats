@@ -25,18 +25,8 @@ public class Main extends Application {
         BorderPane pane = new BorderPane();
         VBox statsBox = new VBox();
         VBox compareBox = new VBox();
-        statsBox.setSpacing(5);
-        /*final ComboBox yearComboBox = new ComboBox();
-        yearComboBox.getItems().addAll(
-                "2019",
-                "2017",
-                "2016"
-        );
-        yearComboBox.setPromptText("Please choose a year");
-        yearComboBox.valueProperty().addListener((ChangeListener<String>) (ov, t, t1) -> {
-            setYear((int) yearComboBox.getValue());
-        });*/
-
+        statsBox.setSpacing(10);
+        compareBox.setSpacing(10);
         Label yearLabel = new Label(" Please enter a year");
         yearLabel.setFont(new Font(18));
         TextField yearTextField = new TextField();

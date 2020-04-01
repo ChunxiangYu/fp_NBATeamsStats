@@ -6,7 +6,7 @@ import java.net.URL;
 
 public class HttpRequest {
     public static InputStream getTeamStats(String date) throws Exception {
-            URL url = new URL("http://data.nba.net/data/10s/prod/v1/"+date+"/standings_all_no_sort_keys.json");
+            URL url = new URL("http://data.nba.net/data/10s/prod/v1/"+date+"/standings_all.json");
             HttpURLConnection con = (HttpURLConnection) url.openConnection();
             con.setRequestMethod("GET");
             return con.getInputStream();
