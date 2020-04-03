@@ -47,6 +47,6 @@ public class TeamStat {
         this.divRank = builder.divRank;
     }
     public String toString() {
-        return " ID: " + id + "\n Wins: " + wins + "\n Losses: " + loss+ "\n Conference Rank: " + confRank+ "\n Division Rank: " + divRank;
+        return " ID: " + id + "\n Wins: " + wins + "\n Losses: " + loss;
     }
 }
