@@ -50,7 +50,7 @@ public class TeamParser {
         jsonArray.add(JsonPath.read(json, "$.league.standard.teams[?(@.teamId == '" + id + "')].divRank"));
         jsonArray.add(JsonPath.read(json, "$.league.standard.teams[?(@.teamId == '" + id + "')].streak"));
 
-        return TeamStat.build().teamId(((JSONArray) jsonArray.get(0)).get(0).toString()).teamWins(getFloat(1)).teamLoss(getFloat(2));
+        return TeamStat.build().teamId(((JSONArray) jsonArray.get(0)).get(0).toString()).teamWins(getFloat(1)).teamConfRank(getFloat(3)).teamDivRank(getFloat(4)).teamLoss(getFloat(2));
     }
 
     private float getFloat(Integer index){
