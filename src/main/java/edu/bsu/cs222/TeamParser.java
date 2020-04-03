@@ -3,8 +3,12 @@ package edu.bsu.cs222;
 import com.jayway.jsonpath.Configuration;
 import com.jayway.jsonpath.JsonPath;
 import net.minidev.json.JSONArray;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 import java.io.InputStream;
+import java.util.Collections;
+import java.util.List;
 
 public class TeamParser {
 
@@ -48,6 +52,7 @@ public class TeamParser {
 
         return TeamStat.build().teamId(((JSONArray) jsonArray.get(0)).get(0).toString()).teamWins(getFloat(1)).teamLoss(getFloat(2));
     }
+
     private float getFloat(Integer index){
         return Float.parseFloat(((JSONArray) jsonArray.get(index)).get(0).toString());
     }

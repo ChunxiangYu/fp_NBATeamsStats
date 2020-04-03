@@ -84,6 +84,7 @@ public class Main extends Application {
     public String getTeamId(String s) throws Exception {
         return TeamList.getNewListOfTeams().getTeamId(s);
     }
+
     public String changeToDate(int year){
         String date = null ;
         switch (year) {
