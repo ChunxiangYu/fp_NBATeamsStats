@@ -1,15 +1,11 @@
-package edu.bsu.cs222;
+package edu.bsu.cs222.Model;
 
 import com.jayway.jsonpath.Configuration;
 import com.jayway.jsonpath.JsonPath;
 import net.minidev.json.JSONArray;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+
 
 import java.io.InputStream;
-import java.util.Collections;
-import java.util.List;
-
 public class TeamParser {
 
     public static final class TeamParserBuilder {

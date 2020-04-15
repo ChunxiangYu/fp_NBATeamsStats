@@ -1,4 +1,4 @@
-package edu.bsu.cs222;
+package edu.bsu.cs222.Model;
 
 import javafx.application.Application;
 import javafx.beans.value.ChangeListener;
