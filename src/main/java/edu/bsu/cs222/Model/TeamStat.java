@@ -11,6 +11,7 @@ public class TeamStat {
         private float loss;
         private float confRank;
         private float divRank;
+        private float urlName;
 
         public TeamBuilder teamId(String id) {
             this.id = id;
@@ -32,6 +33,11 @@ public class TeamStat {
             this.loss = loss;
             return new TeamStat(this);
         }
+        public TeamStat teamUrlName(float urlName) {
+            this.urlName = urlName;
+            return new TeamStat(this);
+        }
+
 
     }
     private String id;
@@ -39,13 +45,16 @@ public class TeamStat {
     private float loss;
     private float confRank;
     private float divRank;
+    private float urlName;
     private TeamStat(TeamBuilder builder) {
         this.wins = builder.wins;
         this.id = builder.id;
         this.loss = builder.loss;
         this.confRank = builder.confRank;
         this.divRank = builder.divRank;
+        this.urlName = builder.urlName;
     }
+
     public String toString() {
         return " Team ID: " + id + "\n Wins: " + wins +"\n Losses: " + loss +"\n Conference Rank: " + confRank+"\n Division Rank: " + divRank;
     }

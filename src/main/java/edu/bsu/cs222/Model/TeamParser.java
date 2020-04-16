@@ -3,9 +3,12 @@ package edu.bsu.cs222.Model;
 import com.jayway.jsonpath.Configuration;
 import com.jayway.jsonpath.JsonPath;
 import net.minidev.json.JSONArray;
+import net.minidev.json.JSONObject;
 
 
 import java.io.InputStream;
+import java.util.List;
+
 public class TeamParser {
 
     public static final class TeamParserBuilder {
@@ -48,6 +51,16 @@ public class TeamParser {
 
         return TeamStat.build().teamId(((JSONArray) jsonArray.get(0)).get(0).toString()).teamWins(getFloat(1)).teamConfRank(getFloat(3)).teamDivRank(getFloat(4)).teamLoss(getFloat(2));
     }
+    public Object parseUrlName(){
+        Object json = Configuration.defaultConfiguration().jsonProvider().parse(in, "UTF-8");
+        List<Object> urlName = JsonPath.read(json, "$.league.standard[?(@.teamId == '" + id + "')].urlName");
+        return urlName.get(0);
+    }
+    /*public List<Object> parseSchedule(){
+        Object json = Configuration.defaultConfiguration().jsonProvider().parse(in, "UTF-8");
+        List<Object> urlName = JsonPath.read(json, "$.league.standard[?(@.teamId == '" + id + "')].urlName");
+        return ;
+    }*/
 
     private float getFloat(Integer index){
         return Float.parseFloat(((JSONArray) jsonArray.get(index)).get(0).toString());

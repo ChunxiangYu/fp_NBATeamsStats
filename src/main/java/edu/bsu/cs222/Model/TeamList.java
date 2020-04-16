@@ -3,8 +3,6 @@ package edu.bsu.cs222.Model;
 import com.jayway.jsonpath.Configuration;
 import com.jayway.jsonpath.JsonPath;
 import net.minidev.json.JSONArray;
-
-
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
@@ -41,6 +39,12 @@ public class TeamList {
         Object document = Configuration.defaultConfiguration().jsonProvider().parse(in, "UTF-8");
         List<String> id = JsonPath.read(document, "$..standard[?(@.fullName=="+ teamName +")].teamId");
         return id.get(0);
+    }
+
+    public String getTeamUrlName(String teamId) {
+        Object document = Configuration.defaultConfiguration().jsonProvider().parse(in, "UTF-8");
+        List<String> urlName = JsonPath.read(document, "$..standard[?(@.teamId=="+ teamId +")].urlName");
+        return urlName.get(0);
     }
 
 }
